@@ -2,18 +2,23 @@ package contabanco.brando;
 
 public class Account {
 	
+	private static final int MAX_LENGTH = 12;
+	
 	private String ag;
 	private String cc;
 	private String name;
 	 
 	 private double balance;
 	
-	private static final int MAX_LENGTH = 12;
+
+	
+	private Log logger;
 	
 	public Account(String ag, String cc, String name) {
 		this.ag = ag;
 		this.cc = cc;
 		setName(name);
+		logger = new Log();
 	}
 	
 	public void setName(String name) {
@@ -22,7 +27,7 @@ public class Account {
 		} else {
 			this.name = name;
 		}
-		System.out.println(this.name);
+		
 	}
 	
 	public void deposit(double value) {
