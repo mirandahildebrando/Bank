@@ -25,6 +25,10 @@ public class Account {
 		System.out.println(this.name);
 	}
 	
+	public void deposit(double value) {
+		balance += value;
+	}
+	
 	public boolean withDraw(double value) {
 		if (balance < value) {
 			return false;
@@ -35,4 +39,6 @@ public class Account {
 		return false;
 		
 	}
+	
+	
 }
