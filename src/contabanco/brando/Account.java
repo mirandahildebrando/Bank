@@ -32,17 +32,24 @@ public class Account {
 	
 	public void deposit(double value) {
 		balance += value;
+		logger.out("DEPOSITO - R$ " + value + " Sua conta agora é de R$ " + balance);
 	}
 	
 	public boolean withDraw(double value) {
 		if (balance < value) {
+			logger.out("SAQUE - R$ " + value + " Seu saldo atual é de R$ " + balance);
 			return false;
-		} else {
-			balance -= value;
-		}
+		} 
 		balance -= value;
-		return false;
+		logger.out("SAQUE - R$ " + value + " Sua conta agora é de R$ " + balance);
+		return true;
 		
+	}
+	
+	@Override
+	public String toString() {
+		String result = "A conta " + this.name + " " + this.ag + " / " + this.cc + "possui: R$ " + balance;
+		return result;
 	}
 	
 	

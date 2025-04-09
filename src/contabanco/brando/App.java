@@ -3,7 +3,6 @@ package contabanco.brando;
 public class App {
 
 	public static void main(String[] args) {
-		System.out.println("Ola mundo");
 		
 		// Criar uma conta (agencia, conta, nome)
 		//Limitar o nome = 12 caracteres
@@ -17,7 +16,7 @@ public class App {
 			System.out.println("Voce nao tem saldo suficiente para sacar!");
 		}
 		
-		
+		//Depositar
 		account.deposit(100);
 		account.deposit(50);
 		account.deposit(100);
@@ -25,11 +24,13 @@ public class App {
 		
 		if(!account.withDraw(200)) {
 			System.out.println("Voce nao tem saldo suficiente para sacar!");
-		} else {
-			System.out.println("Saque efetuado");
-		}
+		} 
 		
-		//Depositar
+		if(!account.withDraw(200)) {
+			System.out.println("Voce nao tem saldo suficiente para sacar!");
+		} 
+		
+		
 		//Informara para o usuário as operações (sauqe, deposito)
 
 	}
