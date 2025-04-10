@@ -19,8 +19,22 @@ public class App {
 				System.out.println("Qual valor deseja depositar ? ");
 				double value = scanner.nextDouble();
 				account.deposit(value);
+				scanner.nextLine();
+			} else if (op.equals("S")) {
+				System.out.println("Qual valor deseja sacar ? ");
+				double value = scanner.nextDouble();
+				if (!account.withDraw(value)) {
+					System.out.println("Ops! Não foi possível sacar o valor R$ " + account.withDraw(value));
+					scanner.nextLine();
+				}
+			} else if (op.equals("E")) {
+				break;
+			} else {
+				System.out.println("Comando invalido, tente novamente!");
 			}
 		}
+		
+		scanner.close();
 
 	}
 
