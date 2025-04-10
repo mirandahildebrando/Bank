@@ -32,6 +32,8 @@ public class App {
 			} else {
 				System.out.println("Comando invalido, tente novamente!");
 			}
+			
+			scanner = new Scanner(System.in);
 		}
 		
 		scanner.close();
