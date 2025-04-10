@@ -1,37 +1,26 @@
 package contabanco.brando;
 
+import java.util.Scanner;
+
 public class App {
 
 	public static void main(String[] args) {
-		
-		// Criar uma conta (agencia, conta, nome)
-		//Limitar o nome = 12 caracteres
+		Scanner scanner = new Scanner(System.in);
 		
 		Account account = new Account("0001", "1234", "Brando");
-		
-		//Sacar valores
-		// Não pode sacar mais do que tem
-		boolean succed = account.withDraw( 200.0);
-		if (!succed) {
-			System.out.println("Voce nao tem saldo suficiente para sacar!");
+		// D = Deposito
+		// S = Saque 
+		// E = Sair (exit)
+		while(true) {
+			System.out.println("O que deseja fazer ? D= Deposito, S= Saque, E= Sair da conta");
+			String op = scanner.nextLine();
+			
+			if (op.equals("D")) {
+				System.out.println("Qual valor deseja depositar ? ");
+				double value = scanner.nextDouble();
+				account.deposit(value);
+			}
 		}
-		
-		//Depositar
-		account.deposit(100);
-		account.deposit(50);
-		account.deposit(100);
-		
-		
-		if(!account.withDraw(200)) {
-			System.out.println("Voce nao tem saldo suficiente para sacar!");
-		} 
-		
-		if(!account.withDraw(200)) {
-			System.out.println("Voce nao tem saldo suficiente para sacar!");
-		} 
-		
-		
-		//Informara para o usuário as operações (sauqe, deposito)
 
 	}
 
