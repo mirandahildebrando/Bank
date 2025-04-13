@@ -9,9 +9,17 @@ public class Bank {
 	
 	private List<Account> accounts;
 	
+	
+	
 	public Bank(String ag) {
 		this.ag = ag;
 		this.accounts = new ArrayList<>();
 	}
+	
+	public Account generateAccount(String name) {
+		Account account = new Account(ag, "00001" , name);
+		return account;
+	}
+
 
 }
