@@ -9,7 +9,7 @@ public class Bank {
 	
 	private List<Account> accounts;
 	
-	
+	private int lastAccount = 1;
 	
 	public Bank(String ag) {
 		this.ag = ag;
@@ -17,7 +17,8 @@ public class Bank {
 	}
 	
 	public Account generateAccount(String name) {
-		Account account = new Account(ag, "00001" , name);
+		Account account = new Account(ag, "" + lastAccount, name);
+		lastAccount++;
 		return account;
 	}
 
